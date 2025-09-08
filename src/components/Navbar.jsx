@@ -3,8 +3,8 @@ import React from "react";
 const Navbar = () => {
   return (
     <div className="">
-      <nav className="max-w-6xl left-0 right-0 mx-auto flex items-center justify-between px-8 py-8 bg-black/10 backdrop-blur-md text-white rounded-full fixed top-6 z-50">
-        <a href="https://prebuiltui.com">
+      <nav className="max-w-6xl left-0 right-0 mx-auto flex items-center justify-between px-16 py-8 bg-black/10 backdrop-blur-md text-white rounded-full fixed top-6 z-50">
+        <a href="#">
           <svg
             width="32"
             height="32"
@@ -20,7 +20,7 @@ const Navbar = () => {
         </a>
         <div className="hidden md:flex text-base items-center gap-18 ml-7">
           <a
-            href="/"
+            href="#"
             className="relative overflow-hidden font-semibold h-6 group"
           >
             <span className="block group-hover:-translate-y-full transition-transform duration-300">
@@ -88,23 +88,20 @@ const Navbar = () => {
           className="absolute hidden top-48 text-base left-0 bg-black w-full flex-col items-center gap-4"
         >
           <a className="hover:text-indigo-600" href="#">
-            Products
+            &lt;/Home&gt;
           </a>
           <a className="hover:text-indigo-600" href="#">
-            Customer Stories
+            &lt;/AboutMe&gt;
           </a>
           <a className="hover:text-indigo-600" href="#">
-            Pricing
+            &lt;/Skills&gt;
           </a>
           <a className="hover:text-indigo-600" href="#">
-            Docs
+            &lt;/Projects&gt;
           </a>
-          <button className="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition">
-            Contact
-          </button>
-          <button className="bg-white hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-100 transition duration-300">
+          {/* <button className="bg-white hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-100 transition duration-300">
             Get Started
-          </button>
+          </button> */}
         </div>
       </nav>
     </div>
