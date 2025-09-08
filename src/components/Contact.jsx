@@ -61,7 +61,7 @@ const Contact = () => {
                     <Facebook size={20} />
                   </a>
                   <a
-                    href="https://discord.com"
+                    href="https://instagram.com/paxton_boom/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-slate-700/50 p-3 rounded-full hover:bg-cyan-600 transition-colors"
