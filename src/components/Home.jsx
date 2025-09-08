@@ -7,7 +7,7 @@ import {
   Mail,
   Github,
   Linkedin,
-  Twitter,
+  Facebook,
 } from "lucide-react";
 import AboutMe from "./About";
 import Navbar from "./Navbar";
@@ -96,25 +96,25 @@ const Home = () => {
 
                 <div className="flex items-center space-x-6">
                   <a
-                    href="https://github.com"
+                    href="https://github.com/mukeshchau407"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     <Github size={24} />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://linkedin.com/in/mukeshchaud407"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     <Linkedin size={24} />
                   </a>
                   <a
-                    href="https://twitter.com"
+                    href="https://facebook.com/mukeshchaud407"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    <Twitter size={24} />
+                    <Facebook size={24} />
                   </a>
                   <a
-                    href="mailto:alex@example.com"
+                    href="mailto:chymukesh5@gmail.com"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     <Mail size={24} />
