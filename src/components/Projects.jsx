@@ -77,14 +77,11 @@ const Projects = () => {
       className="py-20 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
     >
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="mb-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
-            &lt;Projects /&gt;
+        <div className="flex items-center gap-2 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+            &lt;/Projects&gt;
           </h2>
-          <p className="text-lg text-gray-300 max-w-4xl">
-            Here are some of my recent projects that showcase my skills and
-            creativity
-          </p>
+          <div className="flex-1 max-w-sm h-[2px] bg-gradient-to-r from-cyan-400 to-pink-400" />
         </div>
 
         {/* Featured Projects */}
