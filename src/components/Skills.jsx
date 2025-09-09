@@ -6,11 +6,17 @@ import PhpIcon from "../assets/icons/php.svg";
 import PythonIcon from "../assets/icons/python.svg";
 import JavaIcon from "../assets/icons/java.svg";
 import JsIcon from "../assets/icons/js.png";
+import GitIcon from "../assets/icons/git.svg";
+import GithubIcon from "../assets/icons/github.svg";
 
 const SkillCard = ({ src, alt }) => {
   return (
-    <div className="w-38 h-42 flex flex-col items-center justify-center rounded-4xl bg-black/10 backdrop-blur-md border border-gray-700">
-      <img src={src} alt={alt} className="w-28 h-28 object-contain" />
+    <div className="w-36 h-36 sm:w-46 sm:h-46 flex flex-col items-center justify-center rounded-4xl bg-black/10 backdrop-blur-md border border-gray-700">
+      <img
+        src={src}
+        alt={alt}
+        className="w-18 md:w-28 h-18 md:h-28 object-contain"
+      />
       {/* <p className="mt-3 text-sm text-gray-300">{alt}</p> */}
     </div>
   );
@@ -19,12 +25,14 @@ const SkillCard = ({ src, alt }) => {
 const SkillsGrid = () => {
   const skills = [
     { src: htmlIcon, alt: "HTML5" },
+    { src: JsIcon, alt: "JavaScript" },
     { src: ReactJsIcon, alt: "ReactJs" },
     { src: NodeJsIcon, alt: "NodeJs" },
     { src: PhpIcon, alt: "Php" },
     { src: PythonIcon, alt: "Python" },
     { src: JavaIcon, alt: "Java" },
-    { src: JsIcon, alt: "JavaScript" },
+    { src: GitIcon, alt: "Git" },
+    { src: GithubIcon, alt: "GitHub" },
   ];
 
   return (
@@ -32,7 +40,7 @@ const SkillsGrid = () => {
       id="skills"
       className="py-20 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
     >
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="container mx-auto px-4 max-w-5xl">
         {/* Header Section */}
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-6">
@@ -49,7 +57,7 @@ const SkillsGrid = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-16 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 mx-6 md:grid-cols-4 gap-16 justify-items-center">
           {skills.map((skill, index) => (
             <SkillCard key={index} src={skill.src} />
           ))}

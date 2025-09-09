@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-br from-blue-900 to-slate-900 text-white overflow-hidden relative pt-46 md:pt-16">
+      <div className="min-h-screen bg-gradient-to-br from-blue-900 to-slate-900 text-white overflow-hidden relative pt-30 md:pt-16">
         {/* Animated background elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
           {[...Array(5)].map((_, i) => (
