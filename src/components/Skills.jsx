@@ -8,16 +8,19 @@ import JavaIcon from "../assets/icons/java.svg";
 import JsIcon from "../assets/icons/js.png";
 import GitIcon from "../assets/icons/git.svg";
 import GithubIcon from "../assets/icons/github.svg";
+import PostmanIcon from "../assets/icons/postman.svg";
 
 const SkillCard = ({ src, alt }) => {
   return (
-    <div className="w-36 h-36 sm:w-46 sm:h-46 flex flex-col items-center justify-center rounded-4xl bg-black/10 backdrop-blur-md border border-gray-700">
+    <div className="w-36 h-36 sm:w-42 sm:h-42 flex flex-col items-center justify-center rounded-4xl bg-black/10 backdrop-blur-md border border-gray-700 group relative">
       <img
         src={src}
         alt={alt}
-        className="w-18 md:w-28 h-18 md:h-28 object-contain"
+        className="w-18 md:w-24 h-18 md:h-24 object-contain"
       />
-      {/* <p className="mt-3 text-sm text-gray-300">{alt}</p> */}
+      <p className="absolute -top-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs font-medium bg-gray-900 border border-gray-700 rounded-md px-4 py-2 text-cyan-400 transition-all duration-300 z-10">
+        {alt}
+      </p>
     </div>
   );
 };
@@ -25,7 +28,7 @@ const SkillCard = ({ src, alt }) => {
 const SkillsGrid = () => {
   const skills = [
     { src: htmlIcon, alt: "HTML5" },
-    { src: JsIcon, alt: "JavaScript" },
+    { src: JsIcon, alt: "JS" },
     { src: ReactJsIcon, alt: "ReactJs" },
     { src: NodeJsIcon, alt: "NodeJs" },
     { src: PhpIcon, alt: "Php" },
@@ -33,6 +36,7 @@ const SkillsGrid = () => {
     { src: JavaIcon, alt: "Java" },
     { src: GitIcon, alt: "Git" },
     { src: GithubIcon, alt: "GitHub" },
+    { src: PostmanIcon, alt: "Postman" },
   ];
 
   return (
@@ -40,7 +44,7 @@ const SkillsGrid = () => {
       id="skills"
       className="py-20 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
     >
-      <div className="container mx-auto px-4 max-w-5xl">
+      <div className="container mx-auto px-4 max-w-6xl">
         {/* Header Section */}
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-6">
@@ -52,14 +56,14 @@ const SkillsGrid = () => {
         </div>
 
         {/* Title Section */}
-        <div className="items-center text-center text-3xl font-semibold tracking-wider mb-12">
+        <div className="items-center text-center text-3xl font-semibold tracking-wider mb-16">
           <h2>Tech Stack</h2>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 mx-6 md:grid-cols-4 gap-16 justify-items-center">
+        <div className=" max-w-4xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-16 justify-center items-center mx-auto">
           {skills.map((skill, index) => (
-            <SkillCard key={index} src={skill.src} />
+            <SkillCard key={index} src={skill.src} alt={skill.alt} />
           ))}
         </div>
       </div>

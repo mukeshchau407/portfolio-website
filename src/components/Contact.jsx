@@ -16,9 +16,9 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
+      className="pt-20 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
     >
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="mx-auto px-4 max-w-6xl">
         <div className="grid">
           {/* Contact Information */}
           <div>
@@ -117,7 +117,7 @@ const Contact = () => {
         </div>
 
         {/* Quick Response Note */}
-        <div className="mt-12 text-center">
+        <div className="my-8 text-center">
           <div className="bg-slate-800/30 backdrop-blur-md rounded-2xl p-6 border border-slate-700/50">
             <div className="flex items-center justify-center">
               <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>

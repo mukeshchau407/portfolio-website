@@ -14,6 +14,7 @@ import Navbar from "./Navbar";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
+import Reveal from "./Reveal";
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -194,10 +195,18 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <AboutMe />
-        <Skills />
-        <Projects />
-        <Contact />
+        <Reveal>
+          <AboutMe />
+        </Reveal>
+        <Reveal>
+          <Skills />
+        </Reveal>
+        <Reveal>
+          <Projects />
+        </Reveal>
+        <Reveal>
+          <Contact />
+        </Reveal>
       </div>
     </>
   );
