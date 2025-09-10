@@ -61,7 +61,7 @@ const SkillsGrid = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className=" max-w-4xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-16 justify-center items-center mx-auto">
+        <div className="max-w-4xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-16 justify-center items-center left-2 right-2 sm:mx-auto">
           {skills.map((skill, index) => (
             <SkillCard key={index} src={skill.src} alt={skill.alt} />
           ))}
