@@ -1,11 +1,15 @@
 import React from "react";
 import htmlIcon from "../assets/icons/html.svg";
+import cssIcon from "../assets/icons/css.svg";
+import JsIcon from "../assets/icons/js.png";
 import ReactJsIcon from "../assets/icons/react.svg";
+import tailwindcssIcon from "../assets/icons/tailwindcss.svg";
 import NodeJsIcon from "../assets/icons/nodejs.svg";
+import expressjsIcon from "../assets/icons/expressjs.svg";
+import nextjsIcon from "../assets/icons/nextjs.svg";
 import PhpIcon from "../assets/icons/php.svg";
 import PythonIcon from "../assets/icons/python.svg";
 import JavaIcon from "../assets/icons/java.svg";
-import JsIcon from "../assets/icons/js.png";
 import GitIcon from "../assets/icons/git.svg";
 import GithubIcon from "../assets/icons/github.svg";
 import PostmanIcon from "../assets/icons/postman.svg";
@@ -30,16 +34,20 @@ const SkillCard = ({ src, alt }) => {
 const SkillsGrid = () => {
   const skills = [
     { src: htmlIcon, alt: "HTML5" },
+    { src: cssIcon, alt: "CSS3" },
     { src: JsIcon, alt: "JS" },
     { src: ReactJsIcon, alt: "ReactJs" },
+    { src: tailwindcssIcon, alt: "TailwindCSS" },
     { src: NodeJsIcon, alt: "NodeJs" },
+    { src: expressjsIcon, alt: "ExpressJs" },
+    { src: nextjsIcon, alt: "NextJs" },
     { src: PhpIcon, alt: "Php" },
     { src: PythonIcon, alt: "Python" },
     { src: JavaIcon, alt: "Java" },
     { src: MangodbIcon, alt: "MangoDB" },
     { src: GitIcon, alt: "Git" },
     { src: GithubIcon, alt: "GitHub" },
-    { src: VscodeIcon, alt: "Vs Code" },
+    { src: VscodeIcon, alt: "VsCode" },
     { src: PostmanIcon, alt: "Postman" },
   ];
 
