@@ -9,6 +9,7 @@ import JsIcon from "../assets/icons/js.png";
 import GitIcon from "../assets/icons/git.svg";
 import GithubIcon from "../assets/icons/github.svg";
 import PostmanIcon from "../assets/icons/postman.svg";
+import VscodeIcon from "../assets/icons/vscode.svg";
 
 const SkillCard = ({ src, alt }) => {
   return (
@@ -36,6 +37,7 @@ const SkillsGrid = () => {
     { src: JavaIcon, alt: "Java" },
     { src: GitIcon, alt: "Git" },
     { src: GithubIcon, alt: "GitHub" },
+    { src: VscodeIcon, alt: "Vs Code" },
     { src: PostmanIcon, alt: "Postman" },
   ];
 
