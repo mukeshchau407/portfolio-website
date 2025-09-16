@@ -16,7 +16,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="pt-20 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
+      className="pt-40 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
     >
       <div className="mx-auto px-4 max-w-6xl">
         <div className="grid">

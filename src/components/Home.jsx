@@ -53,7 +53,7 @@ const Home = () => {
             ))}
           </div> */}
 
-          <div className="container mx-auto px-4 py-8 relative z-10 flex items-center justify-center min-h-screen">
+          <div className="container mx-auto px-4 pt-18 md:pt-32 relative z-10 flex items-center justify-center">
             <div className="w-full max-w-6xl">
               <div className="flex flex-col lg:flex-row items-center justify-between">
                 {/* Left content */}

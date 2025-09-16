@@ -2,13 +2,18 @@ import React from "react";
 import { ExternalLink, Github, Eye } from "lucide-react";
 
 const Projects = () => {
+  const screenshotUrl = (url) =>
+    `https://api.microlink.io/?url=${encodeURIComponent(
+      url
+    )}&meta=false&screenshot=true&embed=screenshot.url`;
+
   const projects = [
     {
       id: 1,
       title: "Grocery E-Commerce ",
       description:
         "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features user authentication, product filtering, shopping cart, and payment integration.",
-      image: "/api/placeholder/400/250",
+      image: screenshotUrl("https://grocery-app-three-sand.vercel.app/login"),
       technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
       githubUrl: "https://github.com/mukeshchau407/Grocery-Market.git",
       liveUrl: "https://example.com",
@@ -18,7 +23,7 @@ const Projects = () => {
       title: "Netflix Clone",
       description:
         "A productivity application for managing tasks and projects with drag-and-drop functionality, team collaboration, and real-time updates.",
-      image: "/api/placeholder/400/250",
+      image: screenshotUrl("https://netflix-clone-three-sand.vercel.app"),
       technologies: ["React", "Firebase", "Material UI", "Redux"],
       githubUrl: "https://github.com/mukeshchau407/Netflix-Clone.git",
       liveUrl: "https://netflix-clone-three-sand.vercel.app",
@@ -28,7 +33,9 @@ const Projects = () => {
       title: "College Management System",
       description:
         "A web application for managing college operations, including student enrollment, course management, and faculty assignments.",
-      image: "/api/placeholder/400/250",
+      image: screenshotUrl(
+        "https://college-management-sigma-pearl.vercel.app/"
+      ),
       technologies: [
         "React.js",
         "Tailwindcss",
@@ -44,11 +51,11 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-20 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
+      className="pt-42 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
     >
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex items-center gap-2 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+          <h2 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
             &lt;/Projects&gt;
           </h2>
           <div className="flex-1 max-w-sm h-[2px] bg-gradient-to-r from-cyan-400 to-pink-400" />

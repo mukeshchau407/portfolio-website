@@ -10,6 +10,7 @@ import GitIcon from "../assets/icons/git.svg";
 import GithubIcon from "../assets/icons/github.svg";
 import PostmanIcon from "../assets/icons/postman.svg";
 import VscodeIcon from "../assets/icons/vscode.svg";
+import MangodbIcon from "../assets/icons/mongodb.svg";
 
 const SkillCard = ({ src, alt }) => {
   return (
@@ -35,6 +36,7 @@ const SkillsGrid = () => {
     { src: PhpIcon, alt: "Php" },
     { src: PythonIcon, alt: "Python" },
     { src: JavaIcon, alt: "Java" },
+    { src: MangodbIcon, alt: "MangoDB" },
     { src: GitIcon, alt: "Git" },
     { src: GithubIcon, alt: "GitHub" },
     { src: VscodeIcon, alt: "Vs Code" },
@@ -44,13 +46,13 @@ const SkillsGrid = () => {
   return (
     <section
       id="skills"
-      className="py-20 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
+      className="pt-42 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
     >
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header Section */}
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-6">
-            <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+            <h2 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
               &lt;/Skills&gt;
             </h2>
             <div className="flex-1 max-w-sm h-[2px] bg-gradient-to-r from-cyan-400 to-pink-400" />

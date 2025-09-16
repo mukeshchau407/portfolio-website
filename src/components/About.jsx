@@ -4,11 +4,11 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-br-to from-slate-900 to-blue-900  text-white"
+      className="pt-42 bg-gradient-br-to from-slate-900 to-blue-900  text-white"
     >
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex items-center gap-2 mb-6">
-          <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+          <h2 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
             &lt;/AboutMe&gt;
           </h2>
           <div className="flex-1 max-w-sm h-[2px] bg-gradient-to-r from-cyan-400 to-pink-400" />
