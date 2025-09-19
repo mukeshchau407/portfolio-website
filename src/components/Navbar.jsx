@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState();
+
   return (
     <div className="">
       <nav className="max-w-6xl left-0 right-0 mx-4 sm:mx-6 md:mx-auto  flex items-center justify-between px-8 md:px-16 py-6 md:py-8 bg-black/10 backdrop-blur-md text-white rounded-full fixed top-6 z-50">
@@ -70,7 +72,10 @@ const Navbar = () => {
             Hire Me
           </button>
         </div> */}
-        <button id="menuToggle" className="md:hidden text-gray-600">
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden text-gray-600"
+        >
           <svg
             className="w-6 h-6"
             fill="none"
@@ -84,19 +89,20 @@ const Navbar = () => {
           </svg>
         </button>
         <div
-          id="mobileMenu"
-          className="absolute hidden top-48 text-base left-0 bg-black w-full flex-col items-center gap-4"
+          className={`absolute top-24 rounded-b-2xl text-base left-0 bg-black/70 backdrop-blur-md w-full flex-col items-center gap-6 ${
+            isMenuOpen ? "flex" : "hidden"
+          } md:hidden py-4`}
         >
           <a className="hover:text-indigo-600" href="#">
             &lt;/Home&gt;
           </a>
-          <a className="hover:text-indigo-600" href="#">
+          <a className="hover:text-indigo-600" href="#about">
             &lt;/AboutMe&gt;
           </a>
-          <a className="hover:text-indigo-600" href="#">
+          <a className="hover:text-indigo-600" href="#skills">
             &lt;/Skills&gt;
           </a>
-          <a className="hover:text-indigo-600" href="#">
+          <a className="hover:text-indigo-600" href="#projects">
             &lt;/Projects&gt;
           </a>
           {/* <button className="bg-white hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-100 transition duration-300">
