@@ -1,4 +1,5 @@
 import React from "react";
+import myImage from "../assets/image/mukeshIcon.png";
 
 const AboutMe = () => {
   return (
@@ -20,9 +21,9 @@ const AboutMe = () => {
               <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 p-1">
                 <div className="w-full h-full rounded-full bg-slate-700 overflow-hidden">
                   <img
-                    src="/api/placeholder/192/192"
+                    src={myImage}
                     alt="Mukesh Chaudhary"
-                    className="w-full h-full object-cover"
+                    className="object-cover"
                   />
                 </div>
               </div>
