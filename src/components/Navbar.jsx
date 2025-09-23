@@ -1,7 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState();
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
+
+  // click/touch outside handler
+  useEffect(() => {
+    const handleOutside = (e) => {
+      if (!isMenuOpen) return;
+      // if click is inside menu or on the toggle button, ignore
+      if (
+        (menuRef.current && menuRef.current.contains(e.target)) ||
+        (buttonRef.current && buttonRef.current.contains(e.target))
+      ) {
+        return;
+      }
+      setIsMenuOpen(false);
+    };
+
+    document.addEventListener("mousedown", handleOutside);
+    document.addEventListener("touchstart", handleOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+      document.removeEventListener("touchstart", handleOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <div className="">
@@ -66,12 +90,6 @@ const Navbar = () => {
             </span>
           </a>
         </div>
-
-        {/* <div className="hidden ml-14 md:flex items-center gap-4">
-          <button className="bg-white hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-100 transition duration-300">
-            Hire Me
-          </button>
-        </div> */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden text-gray-600"
@@ -88,28 +106,50 @@ const Navbar = () => {
             <path d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
+      </nav>
+      <div
+        ref={menuRef}
+        className={`fixed left-0 right-0 top-24 px-4 z-40 md:hidden ${
+          isMenuOpen ? "block" : "hidden"
+        }`}
+      >
         <div
-          className={`absolute top-24 rounded-b-2xl text-base left-0 bg-black/70 backdrop-blur-md w-full flex-col items-center gap-6 ${
-            isMenuOpen ? "flex" : "hidden"
-          } md:hidden py-4`}
+          className="max-w-6xl mx-auto mt-6 rounded-2xl text-white bg-black/10 backdrop-blur-md border border-white/10 shadow-lg py-6 flex flex-col items-center gap-6"
+          style={{
+            WebkitBackdropFilter: "blur(12px)",
+            backdropFilter: "blur(12px)",
+          }}
         >
-          <a className="hover:text-indigo-600" href="#">
+          <a
+            className="hover:text-indigo-600"
+            href="#"
+            onClick={() => setIsMenuOpen(false)}
+          >
             &lt;/Home&gt;
           </a>
-          <a className="hover:text-indigo-600" href="#about">
+          <a
+            className="hover:text-indigo-600"
+            href="#about"
+            onClick={() => setIsMenuOpen(false)}
+          >
             &lt;/AboutMe&gt;
           </a>
-          <a className="hover:text-indigo-600" href="#skills">
+          <a
+            className="hover:text-indigo-600"
+            href="#skills"
+            onClick={() => setIsMenuOpen(false)}
+          >
             &lt;/Skills&gt;
           </a>
-          <a className="hover:text-indigo-600" href="#projects">
+          <a
+            className="hover:text-indigo-600"
+            href="#projects"
+            onClick={() => setIsMenuOpen(false)}
+          >
             &lt;/Projects&gt;
           </a>
-          {/* <button className="bg-white hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-100 transition duration-300">
-            Get Started
-          </button> */}
         </div>
-      </nav>
+      </div>
     </div>
   );
 };
