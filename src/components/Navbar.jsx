@@ -1,4 +1,22 @@
+import { Menu, X } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
+const NavbarLink = [
+  {
+    href: "#",
+    label: "</Home>",
+  },
+  {
+    href: "about",
+    label: "</AboutMe>",
+  },
+  {
+    href: "#skills",
+    label: "</Skills>",
+  },
+  { href: "#projects", label: "</Projects>" },
+];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState();
@@ -30,7 +48,7 @@ const Navbar = () => {
   return (
     <div className="">
       <nav className="max-w-6xl left-0 right-0 mx-4 sm:mx-6 md:mx-auto  flex items-center justify-between px-8 md:px-16 py-6 md:py-8 bg-black/10 backdrop-blur-md text-white rounded-full fixed top-6 z-50">
-        <a href="#">
+        <a href="/">
           <svg
             width="32"
             height="32"
@@ -45,66 +63,27 @@ const Navbar = () => {
           </svg>
         </a>
         <div className="hidden md:flex text-base items-center gap-18 ml-7">
-          <a
-            href="#"
-            className="relative overflow-hidden font-semibold h-6 group"
-          >
-            <span className="block group-hover:-translate-y-full transition-transform duration-300">
-              &lt;/Home&gt;
-            </span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">
-              &lt;/Home&gt;
-            </span>
-          </a>
-          <a
-            href="#about"
-            className="relative overflow-hidden font-semibold h-6 group"
-          >
-            <span className="block group-hover:-translate-y-full transition-transform duration-300">
-              &lt;/AboutMe&gt;
-            </span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">
-              &lt;/AboutMe&gt;
-            </span>
-          </a>
-          <a
-            href="#skills"
-            className="relative overflow-hidden font-semibold h-6 group"
-          >
-            <span className="block group-hover:-translate-y-full transition-transform duration-300">
-              &lt;/Skills&gt;
-            </span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">
-              &lt;/Skills&gt;
-            </span>
-          </a>
-          <a
-            href="#projects"
-            className="relative overflow-hidden font-semibold h-6 group"
-          >
-            <span className="block group-hover:-translate-y-full transition-transform duration-300">
-              &lt;/Projects&gt;
-            </span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">
-              &lt;/Projects&gt;
-            </span>
-          </a>
+          {NavbarLink.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              className="relative overflow-hidden font-semibold h-6 group"
+            >
+              <span className="block group-hover:-translate-y-full transition-transform duration-300">
+                {link.label}
+              </span>
+              <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">
+                {link.label}
+              </span>
+            </a>
+          ))}
         </div>
         <button
+          ref={buttonRef}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden text-gray-600"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+          {!isMenuOpen ? <Menu /> : <X />}
         </button>
       </nav>
       <div
@@ -113,41 +92,17 @@ const Navbar = () => {
           isMenuOpen ? "block" : "hidden"
         }`}
       >
-        <div
-          className="max-w-6xl mx-auto mt-6 rounded-2xl text-white bg-black/10 backdrop-blur-md border border-white/10 shadow-lg py-6 flex flex-col items-center gap-6"
-          style={{
-            WebkitBackdropFilter: "blur(12px)",
-            backdropFilter: "blur(12px)",
-          }}
-        >
-          <a
-            className="hover:text-indigo-600"
-            href="#"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            &lt;/Home&gt;
-          </a>
-          <a
-            className="hover:text-indigo-600"
-            href="#about"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            &lt;/AboutMe&gt;
-          </a>
-          <a
-            className="hover:text-indigo-600"
-            href="#skills"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            &lt;/Skills&gt;
-          </a>
-          <a
-            className="hover:text-indigo-600"
-            href="#projects"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            &lt;/Projects&gt;
-          </a>
+        <div className="max-w-6xl mx-auto mt-6 rounded-2xl text-white bg-black/10 backdrop-blur-md border border-white/10 shadow-lg py-6 flex flex-col items-center gap-6">
+          {NavbarLink.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              className="w-full text-center font-semibold py-2 hover:bg-white/10 transition-colors rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
       </div>
     </div>

@@ -1,20 +1,34 @@
 import React, { useState, useEffect } from "react";
-import {
-  Code,
-  Palette,
-  Smartphone,
-  Rocket,
-  Mail,
-  Github,
-  Linkedin,
-  Facebook,
-} from "lucide-react";
+import { Mail, Github, Linkedin, Facebook, Download } from "lucide-react";
 import AboutMe from "./About";
 import Navbar from "./Navbar";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Reveal from "./Reveal";
+
+const socialLinks = [
+  {
+    href: "https://github.com/mukeshchau407",
+    icon: <Github size={24} />,
+    label: "GitHub",
+  },
+  {
+    href: "https://linkedin.com/in/mukeshchaud407",
+    icon: <Linkedin size={24} />,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://facebook.com/mukeshchaud407",
+    icon: <Facebook size={24} />,
+    label: "Facebook",
+  },
+  {
+    href: "mailto:mukeshchaud407@gmail.com",
+    icon: <Mail size={24} />,
+    label: "Email",
+  },
+];
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,10 +47,10 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-br from-blue-900 to-slate-900 text-white overflow-hidden relative pt-18 md:pt-16">
+      <div className="min-h-screen bg-gradient-to-br from-blue-900 to-slate-900 text-white overflow-hidden relative pt-18 md:pt-12">
         <div className="max-w-5xl mx-auto">
           {/* Animated background elements */}
-          {/* <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
             {[...Array(5)].map((_, i) => (
               <div
                 key={i}
@@ -51,7 +65,7 @@ const Home = () => {
                 }}
               />
             ))}
-          </div> */}
+          </div>
 
           <div className="container mx-auto px-4 pt-18 md:pt-32 relative z-10 flex items-center justify-center">
             <div className="w-full max-w-6xl">
@@ -66,7 +80,7 @@ const Home = () => {
                 >
                   <div className="mb-6">
                     <span className="text-blue-400 font-semibold">
-                      Hello, I'm
+                      Hello ( ), I'm
                     </span>
                     <h1 className="max-w-2xl text-4xl md:text-6xl font-bold mt-2 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
                       Mukesh Kumar Chaudhary
@@ -81,46 +95,31 @@ const Home = () => {
                     </p>
                   </div>
 
-                  <div className="flex flex-wrap gap-4 mb-8 md:mb-12">
+                  <div className="flex flex-wrap gap-4 mb-6 md:mb-6">
                     <button
                       onClick={() => scrollToSection("projects")}
-                      className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-medium hover:from-blue-600 hover:to-cyan-600 transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-cyan-500/20"
+                      className="flex gap-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-medium hover:from-blue-600 hover:to-cyan-600 hover:shadow-cyan-500/20"
                     >
-                      View My Work
+                      <Download /> Download CV
                     </button>
                     <button
                       onClick={() => scrollToSection("contact")}
-                      className="px-6 py-3 border border-blue-500 text-blue-300 rounded-lg font-medium hover:bg-blue-500/10 transition-all"
+                      className="px-4 py-3 border border-blue-500 text-blue-300 rounded-lg font-medium hover:bg-blue-500/10 transition-all"
                     >
                       Contact Me
                     </button>
                   </div>
 
                   <div className="flex items-center space-x-6">
-                    <a
-                      href="https://github.com/mukeshchau407"
-                      className="text-gray-400 hover:text-white transition-colors"
-                    >
-                      <Github size={24} />
-                    </a>
-                    <a
-                      href="https://linkedin.com/in/mukeshchaud407"
-                      className="text-gray-400 hover:text-white transition-colors"
-                    >
-                      <Linkedin size={24} />
-                    </a>
-                    <a
-                      href="https://facebook.com/mukeshchaud407"
-                      className="text-gray-400 hover:text-white transition-colors"
-                    >
-                      <Facebook size={24} />
-                    </a>
-                    <a
-                      href="mailto:chymukesh5@gmail.com"
-                      className="text-gray-400 hover:text-white transition-colors"
-                    >
-                      <Mail size={24} />
-                    </a>
+                    {socialLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        className="text-gray-400 hover:text-white transition-colors border rounded-full p-2"
+                      >
+                        {link.icon}
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
