@@ -7,7 +7,7 @@ const AboutMe = () => {
       id="about"
       className="pt-42 bg-gradient-br-to from-slate-900 to-blue-900  text-white"
     >
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="container mx-auto px-4 max-w-sm sm:max-w-xl md:max-w-6xl left-2 right-2">
         <div className="flex items-center gap-2 mb-6">
           <h2 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
             &lt;/AboutMe&gt;

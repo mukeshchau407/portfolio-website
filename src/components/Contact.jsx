@@ -18,7 +18,7 @@ const Contact = () => {
       id="contact"
       className="pt-40 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
     >
-      <div className="mx-auto px-4 max-w-6xl">
+      <div className="mx-auto px-4 max-w-sm sm:max-w-xl md:max-w-6xl left-2 right-2">
         <div className="grid">
           {/* Contact Information */}
           <div>

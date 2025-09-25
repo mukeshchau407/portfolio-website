@@ -1,6 +1,5 @@
 import { Menu, X } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 
 const NavbarLink = [
   {
@@ -23,11 +22,9 @@ const Navbar = () => {
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
 
-  // click/touch outside handler
   useEffect(() => {
     const handleOutside = (e) => {
       if (!isMenuOpen) return;
-      // if click is inside menu or on the toggle button, ignore
       if (
         (menuRef.current && menuRef.current.contains(e.target)) ||
         (buttonRef.current && buttonRef.current.contains(e.target))
@@ -46,8 +43,8 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <div className="">
-      <nav className="max-w-6xl left-0 right-0 mx-4 sm:mx-6 md:mx-auto  flex items-center justify-between px-8 md:px-16 py-6 md:py-8 bg-black/10 backdrop-blur-md text-white rounded-full fixed top-6 z-50">
+    <div>
+      <nav className="max-w-6xl left-0 right-0 sm:left-2 sm:right-2 mx-4 sm:mx-6 md:mx-auto border border-white/10 flex items-center justify-between px-8 md:px-16 py-5 md:py-8 bg-black/10 backdrop-blur-md text-white rounded-full fixed top-6 z-50">
         <a href="/">
           <svg
             width="32"
