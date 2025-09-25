@@ -8,7 +8,7 @@ const NavbarLink = [
     label: "</Home>",
   },
   {
-    href: "about",
+    href: "#about",
     label: "</AboutMe>",
   },
   {
