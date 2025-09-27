@@ -96,15 +96,18 @@ const Home = () => {
                   </div>
 
                   <div className="flex flex-wrap gap-4 mb-6 md:mb-6">
-                    <button
-                      onClick={() => scrollToSection("projects")}
-                      className="flex gap-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-medium hover:from-blue-600 hover:to-cyan-600 hover:shadow-cyan-500/20"
+                    <a
+                      href="/CV.pdf"
+                      download="CV.pdf"
+                      type="application/pdf"
+                      className="flex gap-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-medium hover:from-blue-600 hover:to-cyan-600 hover:shadow-cyan-500/20 cursor-pointer"
                     >
                       <Download /> Download CV
-                    </button>
+                    </a>
+
                     <button
                       onClick={() => scrollToSection("contact")}
-                      className="px-4 py-3 border border-blue-500 text-blue-300 rounded-lg font-medium hover:bg-blue-500/10 transition-all"
+                      className="px-4 py-3 border border-blue-500 text-blue-300 rounded-lg font-medium hover:bg-blue-500/10 transition-all cursor-pointer"
                     >
                       Contact Me
                     </button>

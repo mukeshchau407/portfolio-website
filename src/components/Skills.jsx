@@ -18,7 +18,7 @@ import MangodbIcon from "../assets/icons/mongodb.svg";
 
 const SkillCard = ({ src, alt }) => {
   return (
-    <div className="w-24 h-24 md:w-32 md:h-32 xl:w-42 xl:h-42 flex flex-col items-center justify-center rounded-4xl bg-black/10 backdrop-blur-md border border-gray-700 group relative">
+    <div className="w-24 h-24 md:w-32 md:h-32 xl:w-38 xl:h-38 flex flex-col items-center justify-center rounded-4xl bg-black/10 backdrop-blur-md border border-gray-700 group relative">
       <img
         src={src}
         alt={alt}
