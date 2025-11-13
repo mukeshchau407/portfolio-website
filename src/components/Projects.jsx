@@ -13,10 +13,10 @@ const Projects = () => {
       title: "Grocery E-Commerce ",
       description:
         "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features user authentication, product filtering, shopping cart, and payment integration.",
-      image: screenshotUrl("https://grocery-app-three-sand.vercel.app/login"),
+      image: screenshotUrl("https://grocery-mart-nu.vercel.app"),
       technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
       githubUrl: "https://github.com/mukeshchau407/Grocery-Market.git",
-      liveUrl: "https://example.com",
+      liveUrl: "https://grocery-mart-nu.vercel.app",
     },
     {
       id: 2,
@@ -73,7 +73,7 @@ const Projects = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-64 lg:h-full object-cover"
+                      className="w-full h-64 lg:h-60 items-center object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
                       <div className="flex space-x-4">
@@ -137,20 +137,18 @@ const Projects = () => {
             ))}
           </div>
         </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <p className="text-gray-300 mb-6">
+        <div className="relative text-center mt-16 z-50 pointer-events-auto">
+          <p className="text-gray-300 mb-6 text-lg tracking-wide">
             Interested in seeing more of my work?
           </p>
           <a
-            href="https://github.com"
+            href="https://github.com/mukeshchau407"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-medium hover:from-blue-600 hover:to-cyan-600 transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-cyan-500/20"
+            className="inline-flex items-center bg-gradient-to-r from-blue-500 to-slate-500 hover:from-slate-500 hover:to-blue-500 px-6 py-3 rounded-full transition-all"
           >
-            <Github size={20} className="mr-2" />
-            View All Projects on GitHub
+            <Github size={22} className="mr-2" />
+            View All Project on Github
           </a>
         </div>
       </div>

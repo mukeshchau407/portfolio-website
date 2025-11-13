@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Mail, Github, Linkedin, Facebook, Download } from "lucide-react";
+import {
+  Mail,
+  Github,
+  Linkedin,
+  Facebook,
+  Download,
+  Settings,
+} from "lucide-react";
 import AboutMe from "./About";
 import Navbar from "./Navbar";
 import Skills from "./Skills";
@@ -47,14 +54,14 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-br from-blue-900 to-slate-900 text-white overflow-hidden relative pt-18 md:pt-12">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden relative pt-18 md:pt-12">
         <div className="max-w-5xl mx-auto">
           {/* Animated background elements */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
             {[...Array(5)].map((_, i) => (
               <div
                 key={i}
-                className="absolute rounded-full bg-blue-500 opacity-10 animate-pulse"
+                className="absolute rounded-full bg-white opacity-10 animate-pulse"
                 style={{
                   width: `${100 + i * 100}px`,
                   height: `${100 + i * 100}px`,
@@ -141,6 +148,12 @@ const Home = () => {
             <Contact />
           </Reveal>
         </div>
+      </div>
+      <div className="fixed flex items-center gap-2 bottom-12 m-auto right-28 rounded-full px-3 py-3 backdrop-blur-md bg-black/10 cursor-pointer group">
+        <span className="hidden group-hover:inline text-sm font-medium text-white transition-all duration-500">
+          support
+        </span>
+        <Settings className="text-white" />
       </div>
     </>
   );
