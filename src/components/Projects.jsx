@@ -73,7 +73,7 @@ const Projects = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-64 lg:h-60 items-center object-cover"
+                      className="w-full h-64 lg:h-full m-auto items-center object-contain"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
                       <div className="flex space-x-4">
