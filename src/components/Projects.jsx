@@ -53,7 +53,7 @@ const Projects = () => {
       id="projects"
       className="pt-42 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
     >
-      <div className="container mx-auto px-4 max-w-sm sm:max-w-xl md:max-w-6xl left-2 right-2">
+      <div className="container mx-auto px-8 max-w-sm sm:max-w-xl md:max-w-5xl left-2 right-2">
         <div className="flex items-center gap-2 mb-12">
           <h2 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
             &lt;/Projects&gt;
@@ -137,7 +137,7 @@ const Projects = () => {
             ))}
           </div>
         </div>
-        <div className="relative text-center mt-16 z-50 pointer-events-auto">
+        <div className="relative text-center mt-16 pointer-events-auto">
           <p className="text-gray-300 mb-6 text-lg tracking-wide">
             Interested in seeing more of my work?
           </p>

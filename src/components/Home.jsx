@@ -6,6 +6,7 @@ import {
   Facebook,
   Download,
   Settings,
+  ArrowRight,
 } from "lucide-react";
 import AboutMe from "./About";
 import Navbar from "./Navbar";
@@ -54,28 +55,10 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden relative pt-18 md:pt-12">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden relative pt-18 md:pt-12 2xl:pt-36">
         <div className="max-w-5xl mx-auto">
-          {/* Animated background elements */}
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-            {[...Array(5)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute rounded-full bg-white opacity-10 animate-pulse"
-                style={{
-                  width: `${100 + i * 100}px`,
-                  height: `${100 + i * 100}px`,
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  animationDuration: `${15 + i * 5}s`,
-                  animationDelay: `${i * 2}s`,
-                }}
-              />
-            ))}
-          </div>
-
-          <div className="container mx-auto px-4 pt-18 md:pt-32 relative z-10 flex items-center justify-center">
-            <div className="w-full max-w-sm sm:max-w-xl md:max-w-6xl left-2 right-2">
+          <div className="container mx-auto px-12 pt-18 md:pt-32 relative z-10 flex items-center justify-center">
+            <div className="w-full max-w-sm sm:max-w-xl md:max-w-5xl left-2 right-2">
               <div className="flex flex-col lg:flex-row items-center justify-between">
                 {/* Left content */}
                 <div
@@ -85,51 +68,38 @@ const Home = () => {
                       : "-translate-x-10 opacity-0"
                   }`}
                 >
-                  <div className="mb-6">
-                    <span className="text-blue-400 font-semibold">
-                      Hello ( ), I'm
+                  <div className="mb-14 max-w-2xl">
+                    <span className="text-white font-bold text-xl md:text-4xl">
+                      Namaste(); I'm
                     </span>
-                    <h1 className="max-w-2xl text-4xl md:text-6xl font-bold mt-2 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
-                      Mukesh Kumar Chaudhary
+                    <h1 className="text-4xl md:text-[80px] 2xl:text-[100px] font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
+                      Mukesh ChaudharY.
                     </h1>
-                    <h2 className="text-2xl md:text-3xl font-light text-gray-300 mb-6">
-                      Full Stack Developer & UI Designer
+                    <h2 className="text-xl md:text-3xl 2xl:text-4xl text-gray-300 mb-2">
+                      Full Stack Developer
                     </h2>
-                    <p className="text-lg text-gray-400 max-w-3xl mb-8">
+                    <p className="text-sm md:text-md 2xl:text-lg text-gray-400 mb-8">
                       I create beautiful, functional, and user-centered digital
                       experiences. Passionate about clean code, innovative
                       design, and turning ideas into reality.
                     </p>
                   </div>
 
-                  <div className="flex flex-wrap gap-4 mb-6 md:mb-6">
+                  <div className="md:flex grid grid-col-reverse gap-12 mb-6 items-center">
                     <a
-                      href="/CV.pdf"
-                      download="CV.pdf"
-                      type="application/pdf"
-                      className="flex gap-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-medium hover:from-blue-600 hover:to-cyan-600 hover:shadow-cyan-500/20 cursor-pointer"
+                      href="mailto:chymukesh5@gmail.com"
+                      target="_blank"
+                      className="group relative flex items-center w-36 h-9 2xl:w-42 xl:h-12 bg-blue-500 text-blue no-underline shadow-[4px_4px_0_#fff] px-4 overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_#fff] hover:text-[#f0f0f0] active:translate-x-1 active:translate-y-1 active:shadow-none rounded-lg"
                     >
-                      <Download /> Download CV
+                      <span className="flex items-center gap-1 text-center font-mono text-sm md:text-md 2xl:text-lg">
+                        Let's talk{" "}
+                        <ArrowRight
+                          size={14}
+                          className="text-center items-center mb-1"
+                        />
+                      </span>
                     </a>
-
-                    <button
-                      onClick={() => scrollToSection("contact")}
-                      className="px-4 py-3 border border-blue-500 text-blue-300 rounded-lg font-medium hover:bg-blue-500/10 transition-all cursor-pointer"
-                    >
-                      Contact Me
-                    </button>
-                  </div>
-
-                  <div className="flex items-center space-x-6">
-                    {socialLinks.map((link) => (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        className="text-gray-400 hover:text-white transition-colors border rounded-full p-2"
-                      >
-                        {link.icon}
-                      </a>
-                    ))}
+                    <Settings className="size-5 animate-wiggle transition-all duration-300" />
                   </div>
                 </div>
               </div>
@@ -148,12 +118,6 @@ const Home = () => {
             <Contact />
           </Reveal>
         </div>
-      </div>
-      <div className="fixed flex items-center gap-2 bottom-12 m-auto right-28 rounded-full px-3 py-3 backdrop-blur-md bg-black/10 cursor-pointer group">
-        <span className="hidden group-hover:inline text-sm font-medium text-white transition-all duration-500">
-          support
-        </span>
-        <Settings className="text-white" />
       </div>
     </>
   );

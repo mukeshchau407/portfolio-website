@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="max-w-6xl left-0 right-0 sm:left-2 sm:right-2 mx-4 sm:mx-6 md:mx-auto border border-white/10 flex items-center justify-between px-8 md:px-16 py-5 md:py-8 bg-black/10 backdrop-blur-md text-white rounded-full fixed top-6 z-50">
+      <nav className="max-w-6xl 2xl:max-w-7xl  left-2 right-2 mx-4 sm:mx-6 md:mx-auto border border-white/5 flex items-center justify-between px-8 md:px-16 py-5 md:py-6 bg-black/10 backdrop-blur-xl text-white rounded-full fixed top-6 z-50">
         <a href="/">
           <svg
             width="32"
@@ -78,7 +78,7 @@ const Navbar = () => {
         <button
           ref={buttonRef}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-gray-600"
+          className="md:hidden text-gray-200"
         >
           {!isMenuOpen ? <Menu /> : <X />}
         </button>

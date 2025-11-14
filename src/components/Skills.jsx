@@ -18,12 +18,8 @@ import MangodbIcon from "../assets/icons/mongodb.svg";
 
 const SkillCard = ({ src, alt }) => {
   return (
-    <div className="w-24 h-24 md:w-32 md:h-32 xl:w-38 xl:h-38 flex flex-col items-center justify-center rounded-4xl bg-black/10 backdrop-blur-md border border-gray-700 group relative">
-      <img
-        src={src}
-        alt={alt}
-        className="w-12 md:w-18 h-12 md:h-18 xl:w-24 xl:h-24 object-contain"
-      />
+    <div className="w-34 h-34 md:w-32 md:h-32 flex flex-col items-center justify-center rounded-4xl bg-gray-500/10 backdrop-blur-md border border-white/5 group relative">
+      <img src={src} alt={alt} className="w-16 h-16 object-contain" />
       <p className="absolute -top-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs font-medium bg-gray-900 border border-gray-700 rounded-md px-4 py-2 text-cyan-400 transition-all duration-300 z-10">
         {alt}
       </p>
@@ -56,7 +52,7 @@ const SkillsGrid = () => {
       id="skills"
       className="pt-42 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
     >
-      <div className="container mx-auto px-4 max-w-sm sm:max-w-xl md:max-w-6xl left-2 right-2">
+      <div className="container mx-auto px-8 max-w-sm sm:max-w-xl md:max-w-5xl left-2 right-2">
         {/* Header Section */}
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-6">
@@ -73,7 +69,7 @@ const SkillsGrid = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="max-w-4xl grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-6 sm:gap-18 justify-center items-center left-2 right-2 mx-auto">
+        <div className="max-w-2xl grid grid-cols-2 md:grid-cols-4 gap-9 justify-center items-center left-2 right-2 text-center tracking-wider mx-auto">
           {skills.map((skill, index) => (
             <SkillCard key={index} src={skill.src} alt={skill.alt} />
           ))}
