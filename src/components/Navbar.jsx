@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="max-w-6xl 2xl:max-w-7xl  left-2 right-2 mx-4 sm:mx-6 md:mx-auto border border-white/5 flex items-center justify-between px-8 md:px-16 py-5 md:py-6 bg-black/10 backdrop-blur-xl text-white rounded-full fixed top-6 z-50">
+      <nav className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl  left-2 right-2 mx-4 sm:mx-6 md:mx-auto border border-white/5 flex items-center justify-between px-8 md:px-16 py-5 md:py-6 bg-black/10 backdrop-blur-xl text-white rounded-full fixed top-6 z-50">
         <a href="/">
           <svg
             width="32"
