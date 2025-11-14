@@ -78,7 +78,7 @@ const Home = () => {
                     <h2 className="text-xl md:text-3xl 2xl:text-4xl text-gray-300 mb-2">
                       Full Stack Developer
                     </h2>
-                    <p className="text-sm md:text-md 2xl:text-lg text-gray-400 mb-8">
+                    <p className="text-sm md:text-base 2xl:text-lg text-gray-400 mb-8">
                       I create beautiful, functional, and user-centered digital
                       experiences. Passionate about clean code, innovative
                       design, and turning ideas into reality.
@@ -95,11 +95,11 @@ const Home = () => {
                         Let's talk{" "}
                         <ArrowRight
                           size={14}
-                          className="text-center items-center mb-1"
+                          className="text-center items-center mb-0.5 ease-out transition-all group-hover:translate-x-1"
                         />
                       </span>
                     </a>
-                    <Settings className="size-5 animate-wiggle transition-all duration-300" />
+                    <Settings className="size-5 animate-wiggle transition-all focus-within:rotate-45 duration-300 cursor-pointer" />
                   </div>
                 </div>
               </div>
