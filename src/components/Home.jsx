@@ -14,6 +14,7 @@ import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Reveal from "./Reveal";
+import KofiWidget from "./KofiWidget";
 
 const socialLinks = [
   {
@@ -118,6 +119,9 @@ const Home = () => {
             <Contact />
           </Reveal>
         </div>
+      </div>
+      <div className="fixed items-end bottom-4 right-4 z-50">
+        <KofiWidget />
       </div>
     </>
   );
