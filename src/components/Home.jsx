@@ -120,7 +120,7 @@ const Home = () => {
           </Reveal>
         </div>
       </div>
-      <div className="fixed items-end bottom-4 right-4 z-50">
+      <div className="flex justify-end sticky bottom-4 right-4">
         <KofiWidget />
       </div>
     </>
