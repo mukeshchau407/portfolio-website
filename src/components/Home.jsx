@@ -56,7 +56,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-b from-black/90 to-gray-900 text-white overflow-hidden relative pt-18 md:pt-12 2xl:pt-36">
+      <div className="min-h-screen bg-gradient-to-t from-black to-black/90 text-white overflow-hidden relative pt-18 md:pt-12 2xl:pt-36">
         <div className="max-w-5xl mx-auto">
           <div className="container mx-auto px-12 pt-18 md:pt-32 relative z-10 flex items-center justify-center">
             <div className="w-full max-w-sm sm:max-w-xl md:max-w-5xl left-2 right-2">

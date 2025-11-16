@@ -51,23 +51,20 @@ const SkillsGrid = () => {
   ];
 
   return (
-    <section
-      id="skills"
-      className="pt-42 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
-    >
+    <section id="skills" className="pt-42">
       <div className="container mx-auto px-8 max-w-sm sm:max-w-xl md:max-w-5xl left-2 right-2">
         {/* Header Section */}
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-6">
-            <h2 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+            <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-white">
               &lt;/Skills&gt;
             </h2>
-            <div className="flex-1 max-w-sm h-[2px] bg-gradient-to-r from-cyan-400 to-pink-400" />
+            <div className="flex-1 max-w-sm h-[1px] mt-1 bg-white" />
           </div>
         </div>
 
         {/* Title Section */}
-        <div className="items-center text-center text-2xl md:text-3xl font-semibold tracking-wider mb-16">
+        <div className="items-center text-center text-xl md:text-3xl 2xl:text-34l font-semibold tracking-wider mb-16">
           <h2>Tech Stack</h2>
         </div>
 

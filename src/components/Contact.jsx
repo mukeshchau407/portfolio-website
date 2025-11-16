@@ -14,10 +14,7 @@ import {
 
 const Contact = () => {
   return (
-    <section
-      id="contact"
-      className="pt-40 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
-    >
+    <section id="contact" className="pt-42">
       <div className="mx-auto px-8 max-w-sm sm:max-w-xl md:max-w-5xl left-2 right-2">
         <div className="grid">
           {/* Contact Information */}

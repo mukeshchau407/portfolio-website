@@ -49,16 +49,13 @@ const Projects = () => {
   ];
 
   return (
-    <section
-      id="projects"
-      className="pt-42 bg-gradient-br-to from-slate-900 to-blue-900 text-white"
-    >
+    <section id="projects" className="pt-42">
       <div className="container mx-auto px-8 max-w-sm sm:max-w-xl md:max-w-5xl left-2 right-2">
         <div className="flex items-center gap-2 mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+          <h2 className="text-xl md:text-3xl 2xl:text-4xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-white">
             &lt;/Projects&gt;
           </h2>
-          <div className="flex-1 max-w-sm h-[2px] bg-gradient-to-r from-cyan-400 to-pink-400" />
+          <div className="flex-1 max-w-sm h-[1px] mt-1 bg-white" />
         </div>
 
         <div className="mb-16">
@@ -97,15 +94,17 @@ const Projects = () => {
                     </div>
                   </div>
                   <div className="p-8">
-                    <h4 className="text-2xl font-bold mb-3 text-white">
+                    <h4 className="text-xl md:text-2xl font-semibold mb-3 text-white">
                       {project.title}
                     </h4>
-                    <p className="text-gray-300 mb-6">{project.description}</p>
+                    <p className="text-gray-300 mb-6 text-sm md:text-base 2xl:text-lg">
+                      {project.description}
+                    </p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.technologies.map((tech, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-cyan-900/30 text-cyan-300 text-sm rounded-full border border-cyan-800/50"
+                          className="px-2 py-1 bg-cyan-900/30 text-cyan-300 text-sm rounded-full border border-cyan-800/50"
                         >
                           {tech}
                         </span>
