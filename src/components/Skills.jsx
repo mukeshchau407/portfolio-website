@@ -18,13 +18,13 @@ import MangodbIcon from "../assets/icons/mongodb.svg";
 
 const SkillCard = ({ src, alt }) => {
   return (
-    <div className="w-34 h-34 md:w-32 md:h-32 2xl:h-38 2xl:w-38  flex flex-col items-center justify-center rounded-3xl bg-gray-900/20 backdrop-blur-md border border-white/5 group relative">
+    <div className="w-34 h-34 md:w-32 md:h-32 2xl:h-38 2xl:w-38  flex flex-col items-center justify-center rounded-3xl bg-gray-700/5 backdrop-blur-md border border-white/10 shadow-[inset_0_0_60px_gray-300] group relative">
       <img
         src={src}
         alt={alt}
         className="w-16 h-16 2xl:h-20 2xl:w-20 object-contain"
       />
-      <p className="absolute -top-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs font-medium rounded-sm border border-white/5 bg-gray-900 px-2 py-0.5 text-white/90 transition-all duration-300 z-10">
+      <p className="absolute -top-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs font-medium rounded-sm border border-white/10 bg-gray-900 shadow-[inset_0_0_60px_gray-300] px-2 py-0.5 text-white/90 transition-all duration-300 z-10">
         {alt}
       </p>
     </div>
@@ -69,7 +69,7 @@ const SkillsGrid = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="max-w-xl md:max-w-3xl 2xl:max-w-4xl grid grid-cols-2 md:grid-cols-4 2xl:grid-cols-5 gap-12 justify-center items-center left-2 right-2 text-center tracking-wider mx-auto">
+        <div className="max-w-xl 2xl:max-w-3xl flex flex-wrap place-items-center gap-12 justify-center items-center left-2 right-2 text-center tracking-wider mx-auto">
           {skills.map((skill, index) => (
             <SkillCard key={index} src={skill.src} alt={skill.alt} />
           ))}
