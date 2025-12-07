@@ -32,6 +32,15 @@ const CustomCursor = () => {
       gsap.to(dot, { duration: 0.3, scale: 1 });
     };
 
+    const hasMouse =
+      window.matchMedia("pointer: fine").matches &&
+      window.matchMedia("(hover: hover)").matches;
+
+    if (!hasMouse) {
+      console.log("No mouse detected, disabling custom cursor.");
+      return;
+    }
+
     hoverTargets.forEach((el) => {
       el.addEventListener("mouseenter", handleMouseEnter);
       el.addEventListener("mouseleave", handleMouseLeave);
