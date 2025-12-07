@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Home from "./components/Home";
 import { Route, Routes } from "react-router-dom";
 import Loader from "./components/Splash";
+import CustomCursor from "./components/CustomCursor";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -13,6 +14,7 @@ const App = () => {
 
   return (
     <>
+      <CustomCursor />
       {loading ? (
         <Loader />
       ) : (

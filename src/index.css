@@ -21,3 +21,13 @@ body {
   -ms-overflow-style: none;
   font-family: "Roboto Mono", monospace;
 }
+
+body:hover .cursor-outline {
+  opacity: 1;
+}
+
+body.hovering .cursor-outline {
+  width: 60px;
+  height: 60px;
+  border-color: #00C2FF;
+}
