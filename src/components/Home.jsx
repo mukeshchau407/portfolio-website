@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Mail,
-  Github,
-  Linkedin,
-  Facebook,
-  Download,
-  Settings,
-  ArrowRight,
-} from "lucide-react";
+import { Mail, Github, Linkedin, Facebook, ArrowRight } from "lucide-react";
 import AboutMe from "./About";
 import Navbar from "./Navbar";
 import Skills from "./Skills";
@@ -15,6 +7,7 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import Reveal from "./Reveal";
 import KofiWidget from "./KofiWidget";
+import SettingsButton from "./SettingsButton";
 
 const socialLinks = [
   {
@@ -86,7 +79,7 @@ const Home = () => {
                     </p>
                   </div>
 
-                  <div className="md:flex grid grid-col-reverse gap-12 mb-6 items-center">
+                  <div className="md:flex-row flex flex-col-reverse gap-12 mb-6 md:items-center">
                     <a
                       href="mailto:chymukesh5@gmail.com"
                       target="_blank"
@@ -100,7 +93,7 @@ const Home = () => {
                         />
                       </span>
                     </a>
-                    <Settings className="size-5 animate-wiggle transition-all focus-within:rotate-45 duration-300 cursor-pointer" />
+                    <SettingsButton />
                   </div>
                 </div>
               </div>
