@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { Moon, SettingsIcon, Sun, Volume2, VolumeOff } from "lucide-react";
+import { SettingsIcon, Volume2, VolumeOff } from "lucide-react";
+import Theme from "./Theme";
 
 const SettingsButton = () => {
   const panelRef = useRef(null);
   const gearRef = useRef(null);
+  const audioRef = useRef(null);
 
   const [open, setOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const [sound, setSound] = useState(false);
 
   // Animate open/close panel + gear rotation
@@ -43,14 +44,13 @@ const SettingsButton = () => {
     }
   }, [open]);
 
-  // Toggle dark/light mode on <html> tag
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
+    if (sound) {
+      audioRef.current.play();
     } else {
-      document.documentElement.classList.remove("dark");
+      audioRef.current.pause();
     }
-  }, [darkMode]);
+  }, [sound]);
 
   return (
     <div className="relative flex items-center">
@@ -58,7 +58,7 @@ const SettingsButton = () => {
       <button
         ref={gearRef}
         onClick={() => setOpen(!open)}
-        className="text-white size-6 hover:scale-125 transition-transform "
+        className="text-white size-6 hover:scale-125 transition-transform cursor-pointer "
       >
         <SettingsIcon />
       </button>
@@ -66,24 +66,21 @@ const SettingsButton = () => {
       {/* Sliding Settings Panel */}
       <div
         ref={panelRef}
-        className="absolute flex items-center left-10 gap-12 bg-transparent
-                   px-8 py-2 rounded-xl shadow-lg"
+        className="absolute flex items-center left-16 gap-12 px-6 py-2"
       >
         {/* Dark / Light Mode Toggle */}
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="text-yellow-500 text-md hover:scale-110 transition-transform"
-        >
-          {darkMode ? <Moon /> : <Sun />}
-        </button>
+        <Theme />
 
         {/* Sound Toggle */}
         <button
           onClick={() => setSound(!sound)}
-          className="text-white text-md hover:scale-110 transition-transform"
+          className="text-white hover:scale-110 transition-transform cursor-pointer"
         >
-          {sound ? <Volume2 /> : <VolumeOff />}
+          {sound ? <Volume2 size={18} /> : <VolumeOff size={18} />}
         </button>
+        <audio ref={audioRef} loop>
+          <source src="/src/assets/music/sweet life.mp3" type="audio/mpeg" />
+        </audio>
       </div>
     </div>
   );
