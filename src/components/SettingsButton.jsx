@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { SettingsIcon, Volume2, VolumeOff } from "lucide-react";
 import Theme from "./Theme";
+import music from "../assets/music/sweet life.mp3";
 
 const SettingsButton = () => {
   const panelRef = useRef(null);
@@ -78,8 +79,8 @@ const SettingsButton = () => {
         >
           {sound ? <Volume2 size={18} /> : <VolumeOff size={18} />}
         </button>
-        <audio ref={audioRef} loop>
-          <source src="/src/assets/music/sweet life.mp3" type="audio/mpeg" />
+        <audio ref={audioRef} loop autoPlay>
+          <source src={music} type="audio/mpeg" />
         </audio>
       </div>
     </div>
