@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Loader from "./components/Splash";
 import CustomCursor from "./components/CustomCursor";
 
-const App = () => {
+const App = ({ darkMode, setDarkMode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,7 +20,10 @@ const App = () => {
       ) : (
         <div>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route
+              path="/"
+              element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />}
+            />
           </Routes>
         </div>
       )}

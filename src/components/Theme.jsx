@@ -26,13 +26,12 @@ const Theme = () => {
     }
   }, [darkMode, mounted]);
 
-  // Don't render button until hydration is complete
   if (!mounted) return null;
 
   return (
     <button
       onClick={() => setDarkMode((prev) => !prev)}
-      className="text-yellow-400 text-md hover:scale-110 transition-transform cursor-pointer"
+      className="text-yellow-600 text-md hover:scale-110 transition-transform cursor-pointer"
     >
       {darkMode ? <Moon size={18} /> : <Sun size={18} />}
     </button>

@@ -59,7 +59,7 @@ const SettingsButton = () => {
       <button
         ref={gearRef}
         onClick={() => setOpen(!open)}
-        className="text-white size-6 hover:scale-125 transition-transform cursor-pointer "
+        className="size-6 hover:scale-125 transition-transform cursor-pointer "
       >
         <SettingsIcon />
       </button>
@@ -75,7 +75,7 @@ const SettingsButton = () => {
         {/* Sound Toggle */}
         <button
           onClick={() => setSound(!sound)}
-          className="text-white hover:scale-110 transition-transform cursor-pointer"
+          className=" hover:scale-110 transition-transform cursor-pointer"
         >
           {sound ? <Volume2 size={18} /> : <VolumeOff size={18} />}
         </button>

@@ -21,6 +21,15 @@ html {
 body {
   -ms-overflow-style: none;
   font-family: "Roboto Mono", monospace;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+.dark body {
+  background-color: black;
+  color: white;
 }
 
 body:hover .cursor-outline {
@@ -31,4 +40,12 @@ body.hovering .cursor-outline {
   width: 60px;
   height: 60px;
   border-color: #00C2FF;
+}
+
+.dark body p{
+  color: #c2c2c2;
+}
+
+body p{
+  color: #565656;
 }

@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl  left-2 right-2 mx-4 sm:mx-6 md:mx-auto border border-white/5 flex items-center justify-between px-8 md:px-16 py-5 md:py-6 bg-black/10 backdrop-blur-xl text-white rounded-full fixed top-6 z-50">
+      <nav className="max-w-5xl hidden xl:max-w-6xl 2xl:max-w-7xl  left-2 right-2 mx-4 sm:mx-6 md:mx-auto border border-white/5 md:flex items-center justify-between px-8 md:px-16 py-5 md:py-6 bg-black/10 backdrop-blur-xl rounded-full fixed top-6 z-50">
         <a href="/">
           <svg
             width="32"
@@ -59,7 +59,7 @@ const Navbar = () => {
             <circle cx="27.294" cy="16" r="4.706" fill="#D9D9D9" />
           </svg>
         </a>
-        <div className="hidden md:flex text-base items-center gap-18 ml-7">
+        <div className="hidden md:flex text-base items-center gap-16 ml-7">
           {NavbarLink.map((link, index) => (
             <a
               key={index}
@@ -69,32 +69,35 @@ const Navbar = () => {
               <span className="block group-hover:-translate-y-full transition-transform duration-300">
                 {link.label}
               </span>
-              <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">
+              <span className="block absolute top-full left-0 group-hover:-translate-y-full transition-transform duration-300">
                 {link.label}
               </span>
             </a>
           ))}
         </div>
-        <button
-          ref={buttonRef}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-gray-200"
-        >
-          {!isMenuOpen ? <Menu /> : <X />}
-        </button>
       </nav>
+      <button
+        ref={buttonRef}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="md:hidden z-50 fixed top-18 right-12 font-black"
+      >
+        {!isMenuOpen ? <Menu /> : <X />}
+      </button>
+
       <div
         ref={menuRef}
-        className={`fixed left-0 right-0 top-24 px-4 z-40 md:hidden ${
+        className={`fixed left-0 right-0 z-40 md:hidden ${
           isMenuOpen ? "block" : "hidden"
         }`}
       >
-        <div className="max-w-6xl mx-auto mt-6 rounded-2xl text-white bg-black/10 backdrop-blur-md border border-white/10 shadow-lg py-6 flex flex-col items-center gap-6">
+        <div className="w-full h-screen mx-auto bg-black/5 backdrop-blur-md border border-white/10 shadow-lg py-6 flex flex-col items-center gap-6">
           {NavbarLink.map((link, index) => (
             <a
               key={index}
               href={link.href}
-              className="w-full text-center font-semibold py-2 hover:bg-white/10 transition-colors rounded-lg"
+              className={`w-full flex justify-center font-black py-2 text-2xl hover:bg-white/10 transition-colors rounded-lg ${
+                index === 0 ? "mt-28" : ""
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}

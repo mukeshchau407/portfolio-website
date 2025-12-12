@@ -56,10 +56,10 @@ const SkillsGrid = () => {
         {/* Header Section */}
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-6">
-            <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-white">
+            <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-semibold bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-orange-600">
               &lt;/Skills&gt;
             </h2>
-            <div className="flex-1 max-w-sm h-[1px] mt-1 bg-white" />
+            <div className="flex-1 max-w-sm h-px mt-1 bg-orange-600" />
           </div>
         </div>
 

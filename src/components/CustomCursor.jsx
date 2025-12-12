@@ -53,12 +53,12 @@ const CustomCursor = () => {
     <>
       <div
         ref={dotRef}
-        className="fixed w-2.5 h-2.5 bg-orange-400/90 rounded-full pointer-events-none z-[9999] top-0 left-0"
+        className="fixed w-2.5 h-2.5 bg-orange-500/90 rounded-full pointer-events-none z-999 top-0 left-0"
       />
 
       <div
         ref={outlineRef}
-        className="fixed w-10 h-10 border-2 border-white/70 rounded-full pointer-events-none z-[9999] top-0 left-0"
+        className="fixed w-10 h-10 border-2 rounded-full pointer-events-none z-999 top-0 left-0"
       />
     </>
   );

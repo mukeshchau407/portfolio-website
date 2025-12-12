@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Loader = () => {
   return (
-    <StyledWrapper className="fixed inset-0 bg-gradient-to-t from-black to-black/90 flex items-center justify-center z-9999">
+    <StyledWrapper className="fixed inset-0 bg-black flex items-center justify-center z-9999">
       <div className="loader" />
     </StyledWrapper>
   );

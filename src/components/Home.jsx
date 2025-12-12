@@ -32,7 +32,7 @@ const socialLinks = [
   },
 ];
 
-const Home = () => {
+const Home = ({ darkMode, setDarkMode }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-t from-black to-black/90 text-white overflow-hidden relative pt-18 md:pt-12 2xl:pt-36">
+      <div className="min-h-screen overflow-hidden relative pt-18 md:pt-12 2xl:pt-36">
         <div className="max-w-5xl mx-auto">
           <div className="container mx-auto px-12 pt-18 md:pt-32 relative z-10 flex items-center justify-center">
             <div className="w-full max-w-sm sm:max-w-xl md:max-w-5xl left-2 right-2">
@@ -63,16 +63,16 @@ const Home = () => {
                   }`}
                 >
                   <div className="mb-14 max-w-2xl">
-                    <span className="text-white font-bold text-xl md:text-4xl">
+                    <span className="font-bold text-xl md:text-4xl">
                       Namaste(); I'm
                     </span>
-                    <h1 className="text-4xl md:text-[80px] 2xl:text-[100px] font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
-                      Mukesh ChaudharY.
+                    <h1 className="text-4xl md:text-[80px] 2xl:text-[100px] font-extrabold bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-cyan-300">
+                      Mukesh Chaudhary.
                     </h1>
-                    <h2 className="text-xl md:text-3xl 2xl:text-4xl text-gray-300 mb-2">
-                      Full Stack Developer
+                    <h2 className="text-xl md:text-5xl 2xl:text-6xl font-black text-gray-300 mb-2">
+                      I design & code for the improvement.
                     </h2>
-                    <p className="text-sm md:text-base 2xl:text-lg text-gray-400 mb-8">
+                    <p className="text-sm md:text-base 2xl:text-lg text-gray-300 dark:text-gray-500 mb-8">
                       I create beautiful, functional, and user-centered digital
                       experiences. Passionate about clean code, innovative
                       design, and turning ideas into reality.
@@ -83,7 +83,7 @@ const Home = () => {
                     <a
                       href="mailto:chymukesh5@gmail.com"
                       target="_blank"
-                      className="group relative flex items-center w-36 h-9 2xl:w-42 xl:h-12 bg-blue-500 text-blue no-underline shadow-[4px_4px_0_#fff] px-4 overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_#fff] hover:text-[#f0f0f0] active:translate-x-1 active:translate-y-1 active:shadow-none rounded-lg"
+                      className="group relative flex text-white items-center w-36 h-9 2xl:w-42 xl:h-12 bg-blue-500 text-blue no-underline shadow-[4px_4px_0_#FF8040] px-4 overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_#FF8040] hover:text-[#f0f0f0] active:translate-x-1 active:translate-y-1 active:shadow-none rounded-lg"
                     >
                       <span className="flex items-center gap-1 text-center font-mono text-sm md:text-md 2xl:text-lg">
                         Let's talk{" "}
@@ -93,7 +93,10 @@ const Home = () => {
                         />
                       </span>
                     </a>
-                    <SettingsButton />
+                    <SettingsButton
+                      darkMode={darkMode}
+                      setDarkMode={setDarkMode}
+                    />
                   </div>
                 </div>
               </div>
