@@ -8,6 +8,8 @@ import Contact from "./Contact";
 import Reveal from "./Reveal";
 import KofiWidget from "./KofiWidget";
 import SettingsButton from "./SettingsButton";
+import { easeInOut, motion } from "framer-motion";
+import ScrollDirection from "./ScrollDirection";
 
 const socialLinks = [
   {
@@ -33,6 +35,7 @@ const socialLinks = [
 ];
 
 const Home = ({ darkMode, setDarkMode }) => {
+  const scrollDir = ScrollDirection();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -59,7 +62,7 @@ const Home = ({ darkMode, setDarkMode }) => {
                   className={`flex-1 transition-all duration-700 ${
                     isVisible
                       ? "translate-x-0 opacity-100"
-                      : "-translate-x-10 opacity-0"
+                      : "-translate-x-20 opacity-0"
                   }`}
                 >
                   <div className="mb-14 max-w-2xl">
@@ -79,7 +82,13 @@ const Home = ({ darkMode, setDarkMode }) => {
                     </p>
                   </div>
 
-                  <div className="md:flex-row flex flex-col-reverse gap-12 mb-6 md:items-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: scrollDir === "down" ? -70 : 90 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    className="md:flex-row flex flex-col-reverse gap-12 mb-6 md:items-center"
+                  >
                     <a
                       href="mailto:chymukesh5@gmail.com"
                       target="_blank"
@@ -97,7 +106,7 @@ const Home = ({ darkMode, setDarkMode }) => {
                       darkMode={darkMode}
                       setDarkMode={setDarkMode}
                     />
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </div>

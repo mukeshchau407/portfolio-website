@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const Reveal = ({ children }) => {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref, inView] = useInView({ threshold: 0.2 });
 
   useEffect(() => {
     if (inView) controls.start("visible");
@@ -16,7 +16,7 @@ const Reveal = ({ children }) => {
       initial="hidden"
       animate={controls}
       variants={{
-        hidden: { opacity: 0, y: 50 },
+        hidden: { opacity: 0, y: 70 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
       }}
     >

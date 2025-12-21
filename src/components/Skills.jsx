@@ -15,23 +15,32 @@ import GithubIcon from "../assets/icons/github.svg";
 import PostmanIcon from "../assets/icons/postman.svg";
 import VscodeIcon from "../assets/icons/vscode.svg";
 import MangodbIcon from "../assets/icons/mongodb.svg";
+import { motion } from "framer-motion";
+import ScrollDirection from "./ScrollDirection";
 
-const SkillCard = ({ src, alt }) => {
+const SkillCard = ({ src, alt, scrollDir }) => {
   return (
-    <div className="w-34 h-34 md:w-32 md:h-32 2xl:h-38 2xl:w-38  flex flex-col items-center justify-center rounded-3xl bg-gray-700/5 backdrop-blur-md border border-white/10 shadow-[inset_0_0_60px_gray-300] group relative">
+    <motion.div
+      initial={{ opacity: 0, scale: 0, y: scrollDir === "down" ? -70 : 70 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1, ease: "easeInOut" }}
+      viewport={{ once: false, amount: 0.3 }}
+      className="w-34 h-34 md:w-32 md:h-32 2xl:h-38 2xl:w-38  flex flex-col items-center justify-center rounded-3xl bg-gray-700/10 backdrop-blur-md border border-white/10 group relative shadow-lg"
+    >
       <img
         src={src}
         alt={alt}
-        className="w-16 h-16 2xl:h-20 2xl:w-20 object-contain"
+        className="w-16 h-16 2xl:h-20 2xl:w-20 object-contain group-hover:scale-110 transition-transform duration-500"
       />
-      <p className="absolute -top-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs font-medium rounded-sm border border-white/10 bg-gray-900 shadow-[inset_0_0_60px_gray-300] px-2 py-0.5 text-white/90 transition-all duration-300 z-10">
+      <p className="absolute -top-3 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 text-xs font-medium rounded-sm border border-white/10 backdrop-blur-lg bg-gray-900/40 shadow-xl px-2 py-0.5 text-white/90 transition-all duration-300 z-10">
         {alt}
       </p>
-    </div>
+    </motion.div>
   );
 };
 
 const SkillsGrid = () => {
+  const scrollDir = ScrollDirection();
   const skills = [
     { src: htmlIcon, alt: "HTML5" },
     { src: cssIcon, alt: "CSS3" },
@@ -39,6 +48,7 @@ const SkillsGrid = () => {
     { src: ReactJsIcon, alt: "ReactJs" },
     { src: tailwindcssIcon, alt: "Tailwind" },
     { src: NodeJsIcon, alt: "NodeJs" },
+    { src: expressjsIcon, alt: "ExpressJs" },
     { src: nextjsIcon, alt: "NextJs" },
     { src: PhpIcon, alt: "Php" },
     { src: PythonIcon, alt: "Python" },
@@ -71,7 +81,12 @@ const SkillsGrid = () => {
         {/* Skills Grid */}
         <div className="max-w-xl 2xl:max-w-3xl flex flex-wrap place-items-center gap-12 justify-center items-center left-2 right-2 text-center tracking-wider mx-auto">
           {skills.map((skill, index) => (
-            <SkillCard key={index} src={skill.src} alt={skill.alt} />
+            <SkillCard
+              key={index}
+              src={skill.src}
+              alt={skill.alt}
+              scrollDir={scrollDir}
+            />
           ))}
         </div>
       </div>
