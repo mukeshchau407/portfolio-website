@@ -12,38 +12,47 @@ const CustomCursor = () => {
       window.matchMedia("(hover: hover)").matches;
 
     setHasMouse(detectedMouse);
-
     if (!detectedMouse) return;
 
     const dot = dotRef.current;
     const outline = outlineRef.current;
 
+    // Center cursor
     gsap.set([dot, outline], { xPercent: -50, yPercent: -50 });
 
     const moveCursor = (e) => {
       const { clientX: x, clientY: y } = e;
-      gsap.to(dot, { duration: 0, x, y });
-      gsap.to(outline, { duration: 0.4, x, y, ease: "power3.out" });
+      gsap.to(dot, { x, y, duration: 0 });
+      gsap.to(outline, {
+        x,
+        y,
+        duration: 0.35,
+        ease: "power3.out",
+      });
     };
 
     window.addEventListener("mousemove", moveCursor);
 
-    const hoverTargets = document.querySelectorAll("a, button, .hover-target");
+    // Handle hover effects (delegation-safe)
+    const handleMouseEnter = () => gsap.to(dot, { scale: 2, duration: 0.2 });
+    const handleMouseLeave = () => gsap.to(dot, { scale: 1, duration: 0.2 });
 
-    const handleMouseEnter = () => gsap.to(dot, { duration: 0.3, scale: 2 });
-    const handleMouseLeave = () => gsap.to(dot, { duration: 0.3, scale: 1 });
+    document.addEventListener("mouseover", (e) => {
+      if (e.target.closest("a, button, .hover-target")) {
+        handleMouseEnter();
+      }
+    });
 
-    hoverTargets.forEach((el) => {
-      el.addEventListener("mouseenter", handleMouseEnter);
-      el.addEventListener("mouseleave", handleMouseLeave);
+    document.addEventListener("mouseout", (e) => {
+      if (e.target.closest("a, button, .hover-target")) {
+        handleMouseLeave();
+      }
     });
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
-      hoverTargets.forEach((el) => {
-        el.removeEventListener("mouseenter", handleMouseEnter);
-        el.removeEventListener("mouseleave", handleMouseLeave);
-      });
+      document.removeEventListener("mouseover", handleMouseEnter);
+      document.removeEventListener("mouseout", handleMouseLeave);
     };
   }, []);
 
@@ -53,12 +62,11 @@ const CustomCursor = () => {
     <>
       <div
         ref={dotRef}
-        className="fixed w-2.5 h-2.5 bg-orange-500/90 rounded-full pointer-events-none z-999 top-0 left-0"
+        className="fixed top-0 left-0 w-2.5 h-2.5 bg-orange-500 rounded-full pointer-events-none z-9999"
       />
-
       <div
         ref={outlineRef}
-        className="fixed w-10 h-10 border-2 rounded-full pointer-events-none z-999 top-0 left-0"
+        className="fixed top-0 left-0 w-10 h-10 border border-orange-500/50 rounded-full pointer-events-none z-9998"
       />
     </>
   );

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Mail, Github, Linkedin, Facebook, ArrowRight } from "lucide-react";
 import AboutMe from "./About";
-import Navbar from "./Navbar";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
@@ -51,7 +50,6 @@ const Home = ({ darkMode, setDarkMode }) => {
 
   return (
     <>
-      <Navbar />
       <div className="min-h-screen overflow-hidden relative pt-18 md:pt-12 2xl:pt-36">
         <div className="max-w-5xl mx-auto">
           <div className="container mx-auto px-12 pt-18 md:pt-32 relative z-10 flex items-center justify-center">

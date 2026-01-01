@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import { Route, Routes } from "react-router-dom";
 import Loader from "./components/Splash";
 import CustomCursor from "./components/CustomCursor";
+import Navbar from "./components/Navbar";
 
 const App = ({ darkMode, setDarkMode }) => {
   const [loading, setLoading] = useState(true);
@@ -19,6 +20,7 @@ const App = ({ darkMode, setDarkMode }) => {
         <Loader />
       ) : (
         <div>
+          <Navbar />
           <Routes>
             <Route
               path="/"

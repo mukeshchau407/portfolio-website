@@ -7,8 +7,16 @@ const Theme = () => {
 
   // Load theme from localStorage after component mounts
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") === "dark";
-    setDarkMode(savedTheme);
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") setDarkMode(true);
+    else if (savedTheme === "light") setDarkMode(false);
+    else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      setDarkMode(prefersDark);
+    }
+
     setMounted(true);
   }, []);
 
