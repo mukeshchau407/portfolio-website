@@ -50,9 +50,10 @@ const Home = ({ darkMode, setDarkMode }) => {
 
   return (
     <>
-      <div className="min-h-screen overflow-hidden relative pt-18 md:pt-12 2xl:pt-36">
-        <div className="max-w-5xl mx-auto">
-          <div className="container mx-auto px-12 pt-18 md:pt-32 relative z-10 flex items-center justify-center">
+      <div className="min-h-screen overflow-hidden relative pt-32 md:pt-12 2xl:pt-36">
+        <div className="absolute inset-0 -z-10 bg-linear-to-br from-blue-700/30 via-purple-700/30 to-cyan-700/30 transform transition-colors duration-500"></div>
+        <div className="">
+          <div className="container max-w-4xl mx-auto px-12 pt-32 md:pt-32 relative z-10 flex items-center justify-center">
             <div className="w-full max-w-sm sm:max-w-xl md:max-w-5xl left-2 right-2">
               <div className="flex flex-col lg:flex-row items-center justify-between">
                 {/* Left content */}
@@ -70,7 +71,7 @@ const Home = ({ darkMode, setDarkMode }) => {
                     <h1 className="text-4xl md:text-[80px] 2xl:text-[100px] font-extrabold bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-cyan-300">
                       Mukesh Chaudhary.
                     </h1>
-                    <h2 className="text-xl md:text-5xl 2xl:text-6xl font-black text-gray-300 mb-2">
+                    <h2 className="text-xl md:text-5xl 2xl:text-6xl font-black text-gray-400 mb-2">
                       I design & code for the improvement.
                     </h2>
                     <p className="text-sm md:text-base 2xl:text-lg text-gray-300 dark:text-gray-500 mb-8">
@@ -85,7 +86,7 @@ const Home = ({ darkMode, setDarkMode }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
                     viewport={{ once: false, amount: 0.2 }}
-                    className="md:flex-row flex flex-col-reverse gap-12 mb-6 md:items-center"
+                    className="md:flex-row flex flex-col-reverse gap-12 mb-12 md:items-center"
                   >
                     <a
                       href="mailto:chymukesh5@gmail.com"

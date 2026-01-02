@@ -6,124 +6,74 @@ import {
   Send,
   Github,
   Linkedin,
-  Twitter,
-  MessageCircle,
   Facebook,
   Instagram,
 } from "lucide-react";
+import { span } from "framer-motion/client";
 
 const Contact = () => {
+  const socialLinks = [
+    {
+      href: "https://github.com/mukeshchau407",
+      icon: <Github size={24} />,
+    },
+    {
+      href: "https://linkedin.com/in/mukeshchaud407/",
+      icon: <Linkedin size={24} />,
+    },
+    {
+      href: "https://facebook.com/mukeshchaud407",
+      icon: <Facebook size={24} />,
+    },
+    {
+      href: "https://instagram.com/paxton_boom/",
+      icon: <Instagram size={24} />,
+    },
+  ];
+
   return (
     <section id="contact" className="pt-42">
-      <div className="mx-auto px-8 max-w-sm sm:max-w-xl md:max-w-5xl left-2 right-2">
-        <div className="grid">
+      <div className="w-full max-h-screen px-8 bg-linear-to-b from-black/90 to-gray-900/30 pt-8 shadow-2xl border border-slate-700/50 left-2 right-2">
+        <div className="grid ">
           {/* Contact Information */}
           <div>
-            <div className="bg-slate-800/30 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-slate-700/50 h-full">
-              <h3 className="text-2xl text-center font-bold mb-6 text-gray-200">
+            <div className="max-w-5xl mx-auto text-center">
+              <h2 className="text-white/60 font-bold font-['Caveat',cursive] text-2xl mb-4">
+                “Code is like humor. When you have to explain it, it’s bad.”
+              </h2>
+              <h3 className="text-2xl text-center font-bold mb-8 text-gray-200">
                 Get in Touch ();
               </h3>
-              <p className="text-gray-300 mb-8">
-                I'm currently available for freelance work and internship
-                opportunities. If you have a project that you want to get
-                started or think you need my help with something, then get in
-                touch.
-              </p>
 
               {/* Social Links */}
               <div className="mb-16">
-                <div className="flex space-x-4 items-center justify-center">
-                  <a
-                    href="https://github.com/mukeshchau407"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-slate-700/50 p-3 rounded-full hover:bg-cyan-600 transition-colors"
-                  >
-                    <Github size={20} />
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/mukeshchaud407/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-slate-700/50 p-3 rounded-full hover:bg-cyan-600 transition-colors"
-                  >
-                    <Linkedin size={20} />
-                  </a>
-                  <a
-                    href="https://facebook.com/mukeshchaud407"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-slate-700/50 p-3 rounded-full hover:bg-cyan-600 transition-colors"
-                  >
-                    <Facebook size={20} />
-                  </a>
-                  <a
-                    href="https://instagram.com/paxton_boom/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-slate-700/50 p-3 rounded-full hover:bg-cyan-600 transition-colors"
-                  >
-                    <Instagram size={20} />
-                  </a>
-                </div>
-              </div>
-
-              <div className="space-y-6 grid grid-cols-1 md:grid-cols-3">
-                <div className="flex items-start">
-                  <div className="bg-cyan-500/20 p-3 rounded-lg mr-4">
-                    <Mail size={20} className="text-cyan-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-200">Email</h4>
+                <div className="flex gap-6 items-center justify-center">
+                  {socialLinks.map((link, index) => (
                     <a
-                      href="mailto:vinod@example.com"
-                      className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                      key={index}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative group p-3 rounded-full border-2 border-white/70 bg-transparent dark:bg-black/20 backdrop-blur-md
+                      shadow-md dark:shadow-black/30 hover:bg-orange-600 hover:border-orange-600 hover:shadow-lg text-gray-200 transition-all duration-300 ease-in-out
+                      flex items-center justify-center"
                     >
-                      chymukesh5@gmail.com
+                      <span className="transition-transform duration-300 group-hover:scale-110">
+                        {link.icon}
+                      </span>
                     </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="bg-cyan-500/20 p-3 rounded-lg mr-4">
-                    <Phone size={20} className="text-cyan-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-200">Phone</h4>
-                    <a
-                      href="tel:+9779709868684"
-                      className="text-cyan-400 hover:text-cyan-300 transition-colors"
-                    >
-                      +977-970-986-8684
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="bg-cyan-500/20 p-3 rounded-lg mr-4">
-                    <MapPin size={20} className="text-cyan-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-200">Location</h4>
-                    <p className="text-gray-300">Lalitpur, Nepal</p>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Quick Response Note */}
-        <div className="my-8 text-center">
-          <div className="bg-slate-800/30 backdrop-blur-md rounded-2xl p-6 border border-slate-700/50">
-            <div className="flex items-center justify-center">
-              <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-              <p className="text-cyan-400 font-medium">
-                I typically respond to messages within 24 hours
-              </p>
-            </div>
-          </div>
-        </div>
+      </div>
+      <div>
+        <p className="text-center py-6 bg-black text-gray-400 text-xs md:text-sm">
+          &copy; {new Date().getFullYear()} Mukesh Chaudhary. All rights
+          reserved.
+        </p>
       </div>
     </section>
   );

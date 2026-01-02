@@ -4,7 +4,7 @@ import { DownloadCloud } from "lucide-react";
 
 const AboutMe = () => {
   return (
-    <section id="about" className="pt-42">
+    <section id="about" className="pt-28 md:pt-42">
       <div className="container mx-auto px-8 max-w-sm sm:max-w-xl md:max-w-5xl left-2 right-2">
         <div className="flex items-center gap-2 mb-6">
           <h2 className="text-xl md:text-3xl 2xl:text-4xl font-semibold bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-orange-600">
@@ -45,7 +45,7 @@ const AboutMe = () => {
             </a>
           </div>
 
-          <div className="w-75 md:w-100 lg:w-180 2xl:w-350 aspect-square mx-auto">
+          <div className="max-w-75 max-h-75 m-auto md:w-100 md:h-90 lg:w-150 lg:h-75 2xl:w-300 2xl:h-90 aspect-square mx-auto">
             <img
               src={myImage}
               alt="Mukesh Kumar Chaudhary"

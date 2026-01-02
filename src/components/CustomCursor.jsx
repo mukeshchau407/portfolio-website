@@ -33,26 +33,30 @@ const CustomCursor = () => {
 
     window.addEventListener("mousemove", moveCursor);
 
-    // Handle hover effects (delegation-safe)
-    const handleMouseEnter = () => gsap.to(dot, { scale: 2, duration: 0.2 });
-    const handleMouseLeave = () => gsap.to(dot, { scale: 1, duration: 0.2 });
+    // Hover effect
+    const handleMouseEnter = () => {
+      gsap.to(dot, { scale: 2, duration: 0.2 });
+      gsap.to(outline, { scale: 1.2, duration: 0.3, borderColor: "#FF8040" }); // scale outline + change color
+    };
+    const handleMouseLeave = () => {
+      gsap.to(dot, { scale: 1, duration: 0.2 });
+      gsap.to(outline, { scale: 1, duration: 0.2, borderColor: "#f97316" }); // revert
+    };
 
-    document.addEventListener("mouseover", (e) => {
-      if (e.target.closest("a, button, .hover-target")) {
-        handleMouseEnter();
-      }
-    });
+    const mouseOverListener = (e) => {
+      if (e.target.closest("a, button, .hover-target")) handleMouseEnter();
+    };
+    const mouseOutListener = (e) => {
+      if (e.target.closest("a, button, .hover-target")) handleMouseLeave();
+    };
 
-    document.addEventListener("mouseout", (e) => {
-      if (e.target.closest("a, button, .hover-target")) {
-        handleMouseLeave();
-      }
-    });
+    document.addEventListener("mouseover", mouseOverListener);
+    document.addEventListener("mouseout", mouseOutListener);
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
-      document.removeEventListener("mouseover", handleMouseEnter);
-      document.removeEventListener("mouseout", handleMouseLeave);
+      document.removeEventListener("mouseover", mouseOverListener);
+      document.removeEventListener("mouseout", mouseOutListener);
     };
   }, []);
 
@@ -60,13 +64,15 @@ const CustomCursor = () => {
 
   return (
     <>
+      {/* Small dot */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-2.5 h-2.5 bg-orange-500 rounded-full pointer-events-none z-9999"
+        className="fixed top-0 left-0 w-3 h-3 bg-orange-600/50 rounded-full pointer-events-none z-999"
       />
+      {/* Outline */}
       <div
         ref={outlineRef}
-        className="fixed top-0 left-0 w-10 h-10 border border-orange-500/50 rounded-full pointer-events-none z-9998"
+        className="fixed top-0 left-0 w-10 h-10 border-2 border-orange-500 rounded-full pointer-events-none z-999"
       />
     </>
   );

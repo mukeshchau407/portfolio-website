@@ -70,7 +70,7 @@ const Navbar = () => {
           </svg>
         </a>
 
-        <div className="hidden md:flex text-xs items-center gap-12 ml-7">
+        <div className="hidden md:flex justify-center text-center text-sm items-center gap-12 ml-7">
           {NavbarLink.map((link, index) => (
             <a
               key={index}
@@ -90,8 +90,10 @@ const Navbar = () => {
 
       {/* Mobile Toggle Button */}
       <div
-        className={`md:hidden fixed top-0 left-0 right-0 z-50000 flex items-center justify-between px-6 py-4 ${
-          scrolled ? "backdrop-blur-md shadow-sm border-b border-white/10" : ""
+        className={`md:hidden fixed top-0 left-0 right-0 z-50000 flex items-center justify-between px-6 py-4 mx-6 mt-4 ${
+          scrolled
+            ? "backdrop-blur-md shadow-md  rounded-full border-b border-white/10"
+            : ""
         }`}
       >
         <a className="text-3xl font-bold font-['Caveat',cursive]" href="/">
@@ -103,7 +105,11 @@ const Navbar = () => {
           onClick={() => setIsMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
-          {!isMenuOpen ? <Menu size={32} /> : <X size={32} />}
+          {!isMenuOpen ? (
+            <Menu size={32} />
+          ) : (
+            <X size={32} className="text-white" />
+          )}
         </button>
       </div>
 
@@ -116,7 +122,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="fixed inset-0 z-50 md:hidden border bg-blue-300 border-white/10 shadow-lg flex flex-col items-center"
+            className="fixed inset-0 z-50 md:hidden bg-black text-white flex flex-col items-center"
           >
             {NavbarLink.map((link, index) => (
               <a
