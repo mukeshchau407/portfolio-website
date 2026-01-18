@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Caveat:wght@400..700&family=Cedarville+Cursive&family=Edu+NSW+ACT+Cursive:wght@600&family=Handlee&family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
 
 @import "tailwindcss";
-
-
 
 /* For Chrome, Edge, Safari */
 ::-webkit-scrollbar {
@@ -22,14 +18,44 @@ html {
 /* For IE / Edge (older) */
 body {
   -ms-overflow-style: none;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Merriweather", serif;
   background-color: white;
-  color: #000000;
+  color: #5e5e5e;
   transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
+  letter-spacing: 0.09rem;
 }
 
 .dark body {
-  background-color: black;
-  color: white;
+  background-color: #000000;
+  color: #b3b3b3;
+}
+
+/* Retro gradient animation */
+@keyframes retro-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.retro-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #3b82f6,
+    #60a5fa,
+    #f97316,
+    #fb923c,
+    #3b82f6
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: retro-gradient 4s ease infinite;
 }

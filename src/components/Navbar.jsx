@@ -12,6 +12,7 @@ const NavbarLink = [
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("#");
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
 
@@ -40,6 +41,23 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10); // adjust threshold if needed
+
+      // Track active section
+      const sections = ["projects", "skills", "about"];
+      let currentSection = "#";
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150) {
+            currentSection = `#${section}`;
+            break;
+          }
+        }
+      }
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -70,12 +88,14 @@ const Navbar = () => {
           </svg>
         </a>
 
-        <div className="hidden md:flex justify-center text-center text-sm items-center gap-12 ml-7">
+        <div className="hidden md:flex justify-center text-center text-md items-center gap-12 ml-7">
           {NavbarLink.map((link, index) => (
             <a
               key={index}
               href={link.href}
-              className="relative overflow-hidden h-6 font-medium group"
+              className={`relative overflow-hidden h-6 font-semibold group ${
+                activeSection === link.href ? "text-orange-500" : ""
+              }`}
             >
               <span className="block group-hover:-translate-y-full transition-transform duration-300">
                 {link.label}
@@ -130,6 +150,10 @@ const Navbar = () => {
                 href={link.href}
                 className={`w-full flex justify-center items-center font-semibold py-6 text-md hover:bg-white/10 transition-colors ${
                   index === 0 ? "mt-24" : ""
+                } ${
+                  activeSection === link.href
+                    ? "text-orange-500 bg-white/5"
+                    : ""
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
